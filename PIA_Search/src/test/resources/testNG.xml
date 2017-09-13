@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PIA Test Suite">
+	<parameter name="IE11DriverPath" value = "C:\Projects\Eclipse\workspace\PIA_Search\drivers\IEDriverServer_x64_2.48.0\IEDriverServer.exe"/>	
+	<parameter name="chromeDriverPath" value = "/usr/local/share/chromedriver" />
+	<parameter name = "urlCertification" value = "http://msas6602i.msg.de:9080/pia/certification/"/>
+	<parameter name = "urlSearch" value = "http://msas6602i.msg.de:9080/pia/certification/#/search"/>
+	<parameter name = "urlQMI" value = "http://msas6602i.msg.de:9080/pia/qmi/"/>
+		
+	<test verbose="2" name="Test for PIA Project" annotations="JDK" preserve-order="true">
+		<parameter name="browser" value = "ie11"/>
+		
+		<classes>
+			<class name= "com.msg.myapp.pia.NP_SearchTest">
+				<methods>
+					<include name = "np_Test"/>					
+				</methods>
+			</class>
+			<class name= "com.msg.myapp.pia.NP_Anlegen">
+				<methods>
+					<include name = "np_Aktion_Anlegen_NoOK"/>				 	
+					<include name = "np_verwerfen"/>					
+					<!-- <include name = "np_Aenderung_Vertragsstandorts"/>					
+					<include name = "np_Aktion_Anlegen_OK"/> -->				 					
+				</methods>	
+			</class>
+			<!-- <class name= "com.msg.myapp.pia.NP_Einreichen">
+				<methods>
+					<include name = "np_Aktion_Einreichen_OK"/>
+					<include name = "np_Aktion_Einreichen_Abbrechen"/>	
+				</methods>
+			</class>	 -->
+			<!-- <class name= "com.msg.myapp.pia.NP_Anlagetypen_Planen">
+				<methods>
+					<include name = "np_Aktion_Statuswechsel"/>					
+				</methods>
+			</class>		 -->
+		</classes>		
+	</test>
+	
+	<!-- 
+	<test verbose="2" name="WebDriverFireFoxTests" annotations="JDK">
+		<parameter name= "browser" value = "firefox"/>
+		<classes>
+			<class name= "com.swql.myapp.WebDriverTest4.ExampleTestMaven41">
+				<methods>
+					<include name = "testExample1"/>					
+				</methods>	
+			</class>			
+		</classes>		
+	</test>
+	 -->
+	<!--  
+	<test verbose="2" name="WebDriverChromeTests" annotations="JDK">
+		<parameter name= "browser" value = "chrome"/>
+		<classes>
+			<class name= "com.swql.myapp.WebDriverTest4.ExampleTestMaven41">
+				<methods>
+					<include name = "testExample1"/>						
+				</methods>	
+			</class>			
+		</classes>		
+	</test>
+	-->
+</suite>
